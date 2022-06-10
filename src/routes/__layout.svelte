@@ -37,6 +37,11 @@
         border: 1px solid black;
     }
 
+    :global(button) {
+        background-color: transparent;
+        border: none;
+    }
+
     @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
         :global(body) {
             width: 100%;
