@@ -10,9 +10,9 @@
         let email = document.getElementById('emailInput').value;
         let password = document.getElementById('passInput').value;
         if(title == 'Login') {
-            signInWithEmailAndPassword(auth, email, password).then(
-                (userCredential) => {
-                    const user =userCredential.user;
+            signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                    const user = userCredential.user;
                     localStorage.setItem("uid", user.uid); // Using svelte stores caused a lot of errors because of firebase interactions
                     goto("/");
                 }
@@ -21,9 +21,9 @@
             });
         }
         else {
-            createUserWithEmailAndPassword(auth, email, password).then(
-                (userCredential) => {
-                    const user =userCredential.user;
+            createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                    const user = userCredential.user;
                     localStorage.setItem("uid", user.uid); // Using svelte stores caused a lot of errors because of firebase interactions
                     goto("/");
                 }
@@ -55,12 +55,11 @@
                     {/if}
                 </div>
                 <div class="mb-3">
-                    <label for="passwordInput" class="form-label">Password</label>
+                    <label for="passInput" class="form-label">Password</label>
                     <input 
-                        type="text"
+                        type="password"
                         class="form-control"
-                        id="passwordInput"
-                        aria-describedby="passwordHelp"
+                        id="passInput"
                         placeholder="Password"                        
                     />
                 </div>
